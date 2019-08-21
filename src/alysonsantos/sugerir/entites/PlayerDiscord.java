@@ -4,6 +4,7 @@ public class PlayerDiscord {
 
     private String player;
     private String discordId;
+    private String segerindo;
 
     public PlayerDiscord(String player, String discordId) {
         this.player = player;
@@ -24,5 +25,13 @@ public class PlayerDiscord {
 
     public void setDiscordId(String discordId) {
         this.discordId = discordId;
+    }
+
+    public String getSegerindo() {
+        return segerindo;
+    }
+
+    public void setSegerindo(String segerindo) {
+        this.segerindo = segerindo;
     }
 }
