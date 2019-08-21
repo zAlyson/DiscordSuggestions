@@ -1,4 +1,4 @@
-package alysonsantos.sugerir.entites;
+package alysonsantos.sugerir.entity;
 
 import java.util.ArrayList;
 import java.util.List;

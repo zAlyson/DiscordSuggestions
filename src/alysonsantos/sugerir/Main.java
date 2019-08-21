@@ -1,6 +1,8 @@
 package alysonsantos.sugerir;
 
-import alysonsantos.sugerir.entites.PlayerManager;
+import alysonsantos.sugerir.commands.CommandSugerir;
+import alysonsantos.sugerir.entity.PlayerManager;
+import alysonsantos.sugerir.events.EventPlayerChat;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -14,11 +16,14 @@ import javax.security.auth.login.LoginException;
 public class Main extends JavaPlugin {
     public static Main plugin;
     public static PlayerManager playerManager;
-    public JDA jda;
+    public static JDA jda;
 
     public void onEnable() {
         plugin = this;
+
         startBot();
+        registerCommandsEvents();
+
         playerManager = new PlayerManager();
     }
 
@@ -33,6 +38,15 @@ public class Main extends JavaPlugin {
         } catch (LoginException e) {
             e.printStackTrace();
         }
+    }
+
+    private void registerCommandsEvents() {
+        pm.registerEvents(new EventPlayerChat(), this);
+        getCommand("sugestao").setExecutor(new CommandSugerir());
+    }
+
+    public static PlayerManager getPlayerManager() {
+        return playerManager;
     }
 
     public ConsoleCommandSender cs = Bukkit.getConsoleSender();

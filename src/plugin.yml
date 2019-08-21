@@ -1,0 +1,6 @@
+name: SugerirDiscord
+version: 1.0
+author: [Alyson Santos]
+main: alysonsantos.sugerir.Main
+commands:
+  sugestao:

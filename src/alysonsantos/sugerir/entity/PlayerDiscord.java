@@ -1,10 +1,10 @@
-package alysonsantos.sugerir.entites;
+package alysonsantos.sugerir.entity;
 
 public class PlayerDiscord {
 
     private String player;
     private String discordId;
-    private String segerindo;
+    private boolean sugerindo;
 
     public PlayerDiscord(String player, String discordId) {
         this.player = player;
@@ -27,11 +27,11 @@ public class PlayerDiscord {
         this.discordId = discordId;
     }
 
-    public String getSegerindo() {
-        return segerindo;
+    public boolean isSugerindo() {
+        return sugerindo;
     }
 
-    public void setSegerindo(String segerindo) {
-        this.segerindo = segerindo;
+    public void setSugerindo(boolean sugerindo) {
+        this.sugerindo = sugerindo;
     }
 }
